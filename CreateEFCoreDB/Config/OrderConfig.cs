@@ -15,7 +15,7 @@ namespace CreateEFCoreDB.Config
             entityBuilder.HasKey(x => x.Id);
             entityBuilder.Property(x => x.Id).IsRequired();
 
-            //An customer has one customer and many products
+            //An order has one customer and many products
             entityBuilder.HasOne(x => x.Customer).WithMany(x => x.Orders);
             entityBuilder.HasMany(x => x.Order2Products).WithOne(x => x.Order);
         }
